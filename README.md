@@ -1,5 +1,10 @@
 # Alexa Invoked Serverless Function
 
+Invoke your serverless function through an invocation through Alexa.  
+This is for one time calls to hit the function without any Alexa state machine
+
+# Installation
+
 ```bash
 # Install serverless globally
 npm i -g serverless
@@ -10,6 +15,8 @@ cd <project_name>
 # Install serverless alexa skill plugin
 sls plugin install -n serverless-alexa-skills
 ```
+
+# Setup
 
 Replace your `handler.py` with the following code:
 
@@ -55,9 +62,9 @@ Append the following to the end of your `serverless.yml` file
 ```yml
 custom:
   alexa:
-    vendorId: ${env:AMAZON_VENDOR_ID}
-    clientId: ${env:AMAZON_CLIENT_ID}
-    clientSecret: ${env:AMAZON_CLIENT_SECRET}
+    vendorId: <YOUR_VENDOR_ID>
+    clientId: <YOUR_AMAZON_CLIENT_ID>
+    clientSecret: <YOUR_AMAZON_CLIENT_SECRET>
 ```
 
 Then, run the following command:
@@ -83,7 +90,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - alexaSkill: ${env:AMAZON_ALEXA_SKILL_ID}
+      - alexaSkill: <YOUR_AMAZON_ALEXA_SKILL_ID>
 ```
 
 Deploy your function
@@ -175,3 +182,4 @@ I went with using the Alexa GUI because `sls alexa build` gave me the following 
 You can probably skip all of this and just make a new skill just by selecting Alexa-hosted Python
 
 ![](./images/tenth.png)
+s
