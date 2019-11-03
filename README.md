@@ -182,4 +182,3 @@ I went with using the Alexa GUI because `sls alexa build` gave me the following 
 You can probably skip all of this and just make a new skill just by selecting Alexa-hosted Python
 
 ![](./images/tenth.png)
-s
