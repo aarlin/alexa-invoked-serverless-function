@@ -1,0 +1,20 @@
+service: python-alexa-invoked-function
+
+provider:
+  name: aws
+  runtime: python3.7
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - alexaSkill: ${env:AMAZON_ALEXA_SKILL_ID}
+
+plugins:
+  - serverless-alexa-skills
+
+custom:
+  alexa:
+    vendorId: ${env:AMAZON_VENDOR_ID}
+    clientId: ${env:AMAZON_CLIENT_ID}
+    clientSecret: ${env:AMAZON_CLIENT_SECRET}

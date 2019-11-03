@@ -1,0 +1,9 @@
+{
+  "name": "python-alexa-invoked-function",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-alexa-skills": "^0.1.0"
+  }
+}
